@@ -27,6 +27,10 @@ export const createApp = () => {
   app.use(express.json({ limit: '1mb' }));
   app.use(morgan('dev'));
 
+  app.get('/', (_req, res) => {
+    res.send('Backend is running 🚀');
+  });
+
   app.get('/health', (_req, res) => {
     res.json({
       status: 'ok',
