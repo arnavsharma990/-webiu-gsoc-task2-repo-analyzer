@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: github-repo-intelligence-api
+    env: node
+    plan: free
+    rootDir: server
+    buildCommand: npm install
+    startCommand: npm run start
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_VERSION
+        value: 20
+      - key: GITHUB_TOKEN
+        sync: false
+      - key: CLIENT_ORIGIN
+        sync: false

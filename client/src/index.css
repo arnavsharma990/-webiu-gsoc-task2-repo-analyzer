@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Grotesk:wght@400;500;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgba(11, 211, 182, 0.18), transparent 28%),
+    radial-gradient(circle at top right, rgba(245, 130, 107, 0.16), transparent 30%),
+    linear-gradient(160deg, #07111f 0%, #0b1728 48%, #06101b 100%);
+  color: #f8fafc;
+  font-family: 'DM Sans', ui-sans-serif, system-ui;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(148, 163, 184, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148, 163, 184, 0.08) 1px, transparent 1px);
+  background-size: 34px 34px;
+  mask-image: linear-gradient(180deg, rgba(255, 255, 255, 0.52), transparent 88%);
+}
+
+#root {
+  min-height: 100vh;
+}
+
+@layer components {
+  .glass-panel {
+    @apply rounded-[28px] border border-white/10 bg-white/[0.06] shadow-panel backdrop-blur-xl;
+  }
+
+  .section-title {
+    @apply font-display text-2xl font-semibold tracking-tight text-white;
+  }
+
+  .metric-slab {
+    @apply rounded-2xl border border-white/10 bg-slate-950/50 p-4;
+  }
+}
